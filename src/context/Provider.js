@@ -10,6 +10,8 @@ const Provider = ({ children }) => {
     price: 0.
   }]);
 
+  const [click, isClick] = useState(false);
+
   const categories = async () => {
     const categoriesResult = await getCategories();
     return categoriesResult;
@@ -30,10 +32,18 @@ const Provider = ({ children }) => {
     setProductsCart((prevState) => ([...prevState, objectProduct]));
   };
 
+  const removeProductsCart = (itens) => {
+    const remove = productsCart.filter((iten) => iten.title !== itens.title);
+    setProductsCart(remove);
+    isClick(true);
+  };
+
   const contextValues = {
     categories,
     getProduct,
+    removeProductsCart,
     productsCart,
+    click,
   };
 
   return (

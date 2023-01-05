@@ -4,10 +4,6 @@ import '../style/cards.css'
 const CardsPage = (props) => {
   const valueSearch = props.searchValue
 
-  const handleClick = (itens) => {
-    console.log(itens.title);
-  };
-
   return (
     <div className="container-cards">
       { valueSearch && valueSearch.map((iten) => (
@@ -15,7 +11,7 @@ const CardsPage = (props) => {
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
-          <button onClick={ () => { handleClick(iten) } }>Comprar</button>
+          <button>Comprar</button>
         </div>
       )) }
     </div>

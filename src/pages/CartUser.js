@@ -5,7 +5,7 @@ import '../style/cards.css'
 
 const CartUser = () => {
 
-  const { productsCart } = useContext(MyContext);
+  const { productsCart, removeProductsCart, click } = useContext(MyContext);
   const [Price, setPrice] = useState(0);
 
   const getPrice = () => {
@@ -16,6 +16,10 @@ const CartUser = () => {
     }
     setPrice(countPrice);
   };
+
+  if (click) {
+    window.location.reload();
+  }
 
   useEffect(() => {
     getPrice();
@@ -31,7 +35,7 @@ const CartUser = () => {
             <p>{ iten.title }</p>
             <img src={ iten.thumbnail } alt={ iten.title } />
             <h2>{ `R$${ iten.price }` }</h2>
-            <button>Excluir</button>
+            <button onClick={ () => { removeProductsCart(iten) } }>Excluir</button>
           </div>
         )) }
       </div>
