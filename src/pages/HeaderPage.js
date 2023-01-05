@@ -53,6 +53,12 @@ const HeaderPage = () => {
         </label>
         <div className="links-header">
           <img className="logo-menu" src={ menu } alt="logo menu" />
+
+          <Link className="next-page" to="/tintas">Tintas</Link>
+          <Link className="next-page" to="/pisos">Pisos</Link>
+          <Link className="next-page" to="/banheiro">Banheiro</Link>
+          <Link className="next-page" to="/cozinha">Cozinha</Link>
+
           <div>
             <Link
               to="/cart-user"><img
@@ -62,9 +68,6 @@ const HeaderPage = () => {
               />
             </Link>
           </div>
-          <Link className="next-page" to="/Empresas">Cadastre-se</Link>
-          <Link className="next-page" to="/Investimentos"></Link>
-          <Link className="next-page" to="/Planos">Planos</Link>
         </div>
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>

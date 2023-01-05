@@ -45,7 +45,11 @@
 
 .links-header {
   position: absolute;
-  top: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 180px;
+  width: 100%;
 }
 
 .logo-search {
@@ -58,14 +62,12 @@
 }
 
 .logo-cart {
-  position: absolute;
-  right: -335px;
+  right: 0%;
   top: -0px;
   width: 30px;
 }
 
 .logo-menu {
-  position: absolute;
   width: 25px;
   top: 8px;
   left: -350px;
