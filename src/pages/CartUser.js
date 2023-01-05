@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import '../style/cards.css'
@@ -6,12 +6,20 @@ import '../style/cards.css'
 const CartUser = () => {
 
   const { productsCart } = useContext(MyContext);
-  const [Price, setPrice] = useState();
+  const [Price, setPrice] = useState(0);
 
-  const getPrice = (prec) => {
-    const { price } = prec;
-    setPrice((prevState) => ({ ...prevState, price }));
+  const getPrice = () => {
+    let countPrice = 0;
+    const arrPrice = productsCart.map((iten) => iten.price);
+    for (let index = 0; index < arrPrice.length; index += 1) {
+      countPrice += arrPrice[index];
+    }
+    setPrice(countPrice);
   };
+
+  useEffect(() => {
+    getPrice();
+  }, [])
 
   return (
     <div>
@@ -28,7 +36,7 @@ const CartUser = () => {
         )) }
       </div>
       <div>
-        <h1>{ `Total da compra: ${ Price }` }</h1>
+        { <h1>{ `Total da compra: R$${ Price.toFixed(2) }` }</h1> }
       </div>
     </div>
   );
