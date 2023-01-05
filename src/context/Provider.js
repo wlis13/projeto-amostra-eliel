@@ -5,6 +5,7 @@ import MyContext from './MyContext';
 const Provider = ({ children }) => {
 
   const [productsCart, setProductsCart] = useState([{
+    category_id: '',
     title: '',
     thumbnail: '',
     price: 0.
@@ -23,8 +24,9 @@ const Provider = ({ children }) => {
   }, []);
 
   const getProduct = (itens) => {
-    const { title, thumbnail, price } = itens;
+    const { title, thumbnail, price, category_id } = itens;
     const objectProduct = {
+      category_id,
       title,
       thumbnail,
       price,
@@ -32,8 +34,8 @@ const Provider = ({ children }) => {
     setProductsCart((prevState) => ([...prevState, objectProduct]));
   };
 
-  const removeProductsCart = (itens) => {
-    const remove = productsCart.filter((iten) => iten.title !== itens.title);
+  const removeProductsCart = (key) => {
+    const remove = productsCart.filter((item, index) => index !== key);
     setProductsCart(remove);
     isClick(true);
   };

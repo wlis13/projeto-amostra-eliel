@@ -5,7 +5,7 @@ import MyContext from '../context/MyContext';
 const ShowItens = (props) => {
   const categories = props.showValues;
 
-  const { getProduct } = useContext(MyContext)
+  const { getProduct } = useContext(MyContext);
 
   return (
     <div className="container-cards">
