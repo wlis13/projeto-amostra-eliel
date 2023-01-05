@@ -7,7 +7,7 @@ const CardsPage = (props) => {
   return (
     <div className="container-cards">
       { valueSearch && valueSearch.map((iten) => (
-        <div className="cards">
+        <div className="cards" key={ iten.title }>
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>

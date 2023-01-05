@@ -1,16 +1,18 @@
 import React from 'react';
 import '../style/cards.css';
 
-const ShowItens = () => {
+const ShowItens = (props) => {
+  const categories = props.showValues;
+
   return (
     <div className="container-cards">
-      {/* {.map((iten) => (
+      { categories.map((iten) => (
         <div className="cards">
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
         </div>
-      )) } */}
+      )) }
     </div>
   );
 };

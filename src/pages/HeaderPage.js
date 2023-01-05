@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/HeaderPage.css';
 import logoSite from '../images/logo-site.png';
 import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
-import { getProductById } from '../util/api';
+import { getProduct, getProductById } from '../util/api';
 import carrinho from '../images/carrinho.png';
 import menu from '../images/menu-branco.png';
 import ShowItens from './showIitens';
@@ -12,6 +12,7 @@ import ShowItens from './showIitens';
 const HeaderPage = () => {
   const [inputValue, setInputValue] = useState({ search: '' });
   const [result, setResult] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -22,6 +23,15 @@ const HeaderPage = () => {
     const productById = await getProductById(inputValue.search);
     setResult(productById.results)
   }
+
+  const productsShow = async () => {
+    const get = await getProduct();
+    setCategories(get.results);
+  };
+
+  useEffect(() => {
+    productsShow();
+  }, [])
 
   return (
     <div className="container-Header-page">
@@ -59,15 +69,13 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       {
-        result ? <div className="card-page">
+        !result ? <div className="card-page">
           <CardsPage searchValue={ result } />
         </div> :
           <div>
-            <ShowItens />
+            <ShowItens showValues={ categories } />
           </div>
-
       }
-
     </div >
   );
 };
