@@ -21,7 +21,7 @@ const HeaderPage = () => {
 
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
-    setResult(productById.results)
+    setResult(productById.results);
   }
 
   const productsShow = async () => {
@@ -69,7 +69,7 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       {
-        !result ? <div className="card-page">
+        inputValue.search ? <div className="card-page">
           <CardsPage searchValue={ result } />
         </div> :
           <div>
