@@ -1,21 +1,18 @@
 import React from 'react';
-import '../style/cards.css'
+import '../style/cards.css';
 
-const CardsPage = (props) => {
-  const valueSearch = props.searchValue
-
+const ShowItens = () => {
   return (
     <div className="container-cards">
-      { valueSearch && valueSearch.map((iten) => (
+      {/* {.map((iten) => (
         <div className="cards">
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
-          <button>Comprar</button>
         </div>
-      )) }
+      )) } */}
     </div>
   );
 };
 
-export default CardsPage
+export default ShowItens

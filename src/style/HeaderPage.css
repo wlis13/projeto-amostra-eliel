@@ -56,6 +56,21 @@
   right: 200px;
 }
 
+.logo-cart {
+  position: absolute;
+  right: -335px;
+  top: -0px;
+  width: 30px;
+}
+
+.logo-menu {
+  position: absolute;
+  width: 25px;
+  top: 8px;
+  left: -350px;
+  cursor: pointer;
+}
+
 .card-page {
   position: absolute;
   width: 100%;

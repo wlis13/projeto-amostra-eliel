@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/HeaderPage.css';
-import logoSite from '../images/logo-site.png'
-import logoSearch from '../images/magnifying-glass.png'
+import logoSite from '../images/logo-site.png';
+import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
 import { getProductById } from '../util/api';
+import carrinho from '../images/carrinho.png';
+import menu from '../images/menu-branco.png';
+import ShowItens from './showIitens';
 
 const HeaderPage = () => {
   const [inputValue, setInputValue] = useState({ search: '' });
@@ -39,15 +42,31 @@ const HeaderPage = () => {
           />
         </label>
         <div className="links-header">
-          <Link className="next-page" to="/Empresas">Para Empresas</Link>
-          <Link className="next-page" to="/Investimentos">Controle de Inverstimentos</Link>
+          <img className="logo-menu" src={ menu } alt="logo menu" />
+          <div>
+            <Link
+              to="/cart-user"><img
+                className="logo-cart"
+                src={ carrinho }
+                alt="logo carrinho"
+              />
+            </Link>
+          </div>
+          <Link className="next-page" to="/Empresas">Cadastre-se</Link>
+          <Link className="next-page" to="/Investimentos"></Link>
           <Link className="next-page" to="/Planos">Planos</Link>
         </div>
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
-      <div className="card-page">
-        <CardsPage searchValue={ result } />
-      </div>
+      {
+        result ? <div className="card-page">
+          <CardsPage searchValue={ result } />
+        </div> :
+          <div>
+            <ShowItens />
+          </div>
+
+      }
 
     </div >
   );
