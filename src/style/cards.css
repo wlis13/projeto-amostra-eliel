@@ -1,0 +1,32 @@
+.container-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 250px;
+  margin: 10px;
+  border-bottom: 2px solid black;
+  padding: 5px;
+}
+
+.cards p {
+  width: 90%;
+  height: 30%;
+}
+
+.cards img {
+  width: 90%;
+  height: 40%;
+}
+
+.cards h2 {
+  height: 28%;
+  width: 60%;
+}

@@ -1,0 +1,86 @@
+.header-first-page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url('../images/background-header.jpg');
+  background-size: 100% 250px;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+}
+
+.logo-header {
+  width: 300px;
+  height: 120px;
+}
+
+.header-first-page input {
+  font-size: 15pt;
+  width: 400px;
+  height: 40px;
+  border-radius: 3px;
+}
+
+.header-first-page input:hover {
+  border: 2px solid rgb(25, 130, 228);
+}
+
+.next-page {
+  text-decoration: none;
+  color: white;
+  margin-left: 30px;
+}
+
+.next-login {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+
+.links-header {
+  position: absolute;
+  top: 200px;
+}
+
+.logo-search {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 115px;
+  right: 200px;
+}
+
+.card-page {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 250px;
+}
+
+.card-page button {
+  width: 200px;
+}
+
+@media only screen and (width: 412px) {
+  .container-Header-page {
+    width: 412px;
+  }
+}
+
+@media only screen and (width: 360px) {
+  .container-Header-page {
+    width: 360px;
+  }
+}
+
+@media only screen and (width: 384px) {
+  .container-Header-page {
+    width: 384px;
+  }
+}
