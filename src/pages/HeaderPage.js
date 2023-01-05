@@ -14,15 +14,16 @@ const HeaderPage = () => {
   const [result, setResult] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setInputValue((prevState) => ({ ...prevState, [name]: value }));
-  };
-
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
     setResult(productById.results);
   }
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setInputValue((prevState) => ({ ...prevState, [name]: value }));
+    productsById();
+  };
 
   const productsShow = async () => {
     const get = await getProduct();
@@ -45,7 +46,6 @@ const HeaderPage = () => {
             placeholder="O que você está procurando?"
           />
           <img
-            onClick={ productsById }
             className="logo-search"
             src={ logoSearch }
             alt="logo de busca"
@@ -72,7 +72,7 @@ const HeaderPage = () => {
         inputValue.search ? <div className="card-page">
           <CardsPage searchValue={ result } />
         </div> :
-          <div>
+          <div className="card-page">
             <ShowItens showValues={ categories } />
           </div>
       }

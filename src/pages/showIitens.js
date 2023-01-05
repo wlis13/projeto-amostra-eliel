@@ -11,6 +11,7 @@ const ShowItens = (props) => {
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
+          <button>Comprar</button>
         </div>
       )) }
     </div>
