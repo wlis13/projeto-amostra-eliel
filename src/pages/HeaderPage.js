@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/HeaderPage.css';
-import logoSite from '../images/logo-site.png';
+import logoSite from '../images/jogo-header.png';
 import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
 import { getProduct, getProductById } from '../util/api';

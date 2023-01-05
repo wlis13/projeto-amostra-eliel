@@ -18,7 +18,7 @@ const CartUser = () => {
   };
 
   if (click) {
-    window.location.reload();
+    console.log('inplementar função para que o preço apareça')
   }
 
   useEffect(() => {
@@ -28,6 +28,7 @@ const CartUser = () => {
   return (
     <div>
       <Link exact to="/">Voltar</Link>
+      <h1>Seu Carrinho de Compras</h1>
       <div className="container-cards">
         { productsCart && productsCart.map((iten) => (
           iten.title !== '' &&
@@ -40,8 +41,9 @@ const CartUser = () => {
         )) }
       </div>
       <div>
-        { <h1>{ `Total da compra: R$${ Price.toFixed(2) }` }</h1> }
+        { <h1>{ `Valor da compra: R$${ Price.toFixed(2) }` }</h1> }
       </div>
+      <button type="submit">Confirmar Compra</button>
     </div>
   );
 };
