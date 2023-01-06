@@ -9,8 +9,8 @@ const CardsPage = (props) => {
   return (
 
     <div className="container-cards">
-      { valueSearch && valueSearch.map((iten) => (
-        <div className="cards" key={ iten.title }>
+      { valueSearch && valueSearch.map((iten, index) => (
+        <div className="cards" key={ index }>
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
