@@ -1,17 +1,4 @@
 .category-menu {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-left: 50px;
-  top: 220px;
-  width: 800px;
-  height: 400px;
-  z-index: 10;
-  background-color: whitesmoke;
-  border-radius: 10px;
-  padding: 0px;
   display: none;
 }
 
@@ -22,13 +9,25 @@
   flex-wrap: wrap;
   align-items: center;
   margin-left: 50px;
-  top: 220px;
-  width: 800px;
+  top: 210px;
+  width: 830px;
   height: 400px;
   z-index: 10;
   background-color: whitesmoke;
   border-radius: 10px;
-  padding: 0px;
+  padding: 2px;
+  box-shadow: 2px 2px 4px black;
+  animation: opacidade 1s;
+}
+
+@keyframes opacidade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100;
+  }
 }
 
 .category-menu p {

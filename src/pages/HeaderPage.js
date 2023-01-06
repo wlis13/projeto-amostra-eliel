@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/HeaderPage.css';
 import logoSite from '../images/jogo-header.png';
 import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
-import { getProduct, getProductById } from '../util/api';
+import { getProductById } from '../util/api';
 import carrinho from '../images/carrinho.png';
 import menu from '../images/menu-branco.png';
 import ShowItens from './showIitens';
 import Categories from './Categories';
+import MyContext from '../context/MyContext';
+import valuesCategory from '../util/category.json';
 
 const HeaderPage = () => {
 
+  const { click, setClick, theClick, getValue } = useContext(MyContext);
+
   const [inputValue, setInputValue] = useState({ search: '' });
   const [result, setResult] = useState([]);
-  const [showProducts, setShowProducs] = useState([]);
 
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
@@ -27,34 +30,32 @@ const HeaderPage = () => {
     productsById();
   };
 
-  const productsShow = async () => {
-    const get = await getProduct();
-    setShowProducs(get.results);
-  };
-
-  useEffect(() => {
-    productsShow();
-  }, [])
-
-  const testfuncao = () =>
-  (
-    inputValue.search ? <div className="card-page">
-      <CardsPage searchValue={ result } />
-    </div> :
-      <div className="card-page">
-        <ShowItens showValues={ showProducts } />
-      </div>
-  );
-
-  const displayMenu = () => {
+  const displayFix = () => {
     const options = document.querySelector('.category-menu');
     options.classList.add('menu-display');
   };
 
-  const endDisplayMenu = () => {
+  const displayOut = () => {
     const options = document.querySelector('.category-menu');
     options.classList.remove('menu-display');
-  }
+  };
+
+  const testfuncao = () => {
+    if (inputValue.search) {
+      setClick(false);
+      return (<div className="card-page">
+        <CardsPage searchValue={ result } />
+      </div>);
+    } else if (click) {
+      inputValue.search = false;
+      return (<div><Categories /></div>);
+    } else {
+      return (<div className="card-page">
+        <ShowItens />
+      </div>);
+    }
+  };
+
 
   return (
     <div className="container-Header-page">
@@ -75,8 +76,8 @@ const HeaderPage = () => {
         </label>
         <div className="links-header">
           <img
-            onMouseOver={ displayMenu }
-            onMouseOut={ endDisplayMenu }
+            onMouseOver={ displayFix }
+            onMouseOut={ displayOut }
             className="logo-menu"
             src={ menu }
             alt="logo menu"
@@ -100,7 +101,13 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       <div>
-        <Categories />
+        <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
+          { valuesCategory && valuesCategory.map((iten, index) => (
+            <div key={ index }>
+              <p onMouseUp={ theClick } onClick={ getValue }>{ iten.name }</p>
+            </div>
+          )) }
+        </div>
         { testfuncao() }
       </div>
 

@@ -1,5 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
-import { getCategories } from '../util/api';
+import { useEffect, useState } from 'react';
+import { getProduct, getProductById } from '../util/api';
+
 import MyContext from './MyContext';
 
 const Provider = ({ children }) => {
@@ -10,8 +11,6 @@ const Provider = ({ children }) => {
     thumbnail: '',
     price: 0.
   }]);
-
-  const [valueCategory, setValueCategory] = useState([]);
 
   const getProducts = (itens) => {
     const { title, thumbnail, price, category_id } = itens;
@@ -30,21 +29,38 @@ const Provider = ({ children }) => {
 
   };
 
-  const fetchTest = useCallback(async () => {
-    const get = await getCategories();
-    console.log(get);
-    setValueCategory(get)
-  }, [])
+  const [click, setClick] = useState(false);
+  const theClick = () => {
+    setClick(true);
+  };
+
+  const [showProducts, setShowProducs] = useState([]);
+  const productsShow = async () => {
+    const get = await getProduct();
+    setShowProducs(get.results);
+  };
 
   useEffect(() => {
-    fetchTest();
-  }, [fetchTest]);
+    productsShow();
+  }, []);
+
+  const [resultClick, setResultClick] = useState([]);
+  const getValue = async ({ target }) => {
+    const productById = await getProductById(target.innerText);
+    setResultClick(productById.results);
+  };
+
 
   const contextValues = {
     getProducts,
     removeProductsCart,
+    theClick,
+    setClick,
+    getValue,
     productsCart,
-    valueCategory,
+    click,
+    showProducts,
+    resultClick,
   };
 
   return (

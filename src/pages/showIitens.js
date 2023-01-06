@@ -2,15 +2,14 @@ import React, { useContext } from 'react';
 import '../style/cards.css';
 import MyContext from '../context/MyContext';
 
-const ShowItens = (props) => {
-  const showProducts = props.showValues;
+const ShowItens = () => {
 
-  const { getProducts } = useContext(MyContext);
+  const { getProducts, showProducts } = useContext(MyContext);
 
   return (
     <div>
       <div className="container-cards">
-        { showProducts.map((iten, index) => (
+        { showProducts && showProducts.map((iten, index) => (
           <div className="cards" key={ index }>
             <p>{ iten.title }</p>
             <img src={ iten.thumbnail } alt={ iten.title } />

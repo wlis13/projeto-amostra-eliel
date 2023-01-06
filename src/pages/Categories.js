@@ -1,34 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import MyContext from '../context/MyContext';
 import '../style/category.css';
-import { getProductById } from '../util/api';
-import valuesCategory from '../util/category.json';
 
 const Categories = () => {
 
-  const [result, setResult] = useState([]);
-
-  const getValue = async ({ target }) => {
-    const productById = await getProductById(target.innerText);
-    setResult(productById.results);
-  };
-
-  const displayFix = () => {
-    const options = document.querySelector('.category-menu');
-    options.classList.add('menu-display');
-  };
-
-  const displayOut = () => {
-    const options = document.querySelector('.category-menu');
-    options.classList.remove('menu-display');
-  }
+  const { getProducts, resultClick } = useContext(MyContext);
 
   return (
-    <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
-      { valuesCategory && valuesCategory.map((iten, index) => (
-        <div key={ index }>
-          <p onClick={ getValue }>{ iten.name }</p>
-        </div>
-      )) }
+    <div>
+      <div className="container-cards">
+        { resultClick.map((iten, index) => (
+          <div className="cards" key={ index }>
+            <p>{ iten.title }</p>
+            <img src={ iten.thumbnail } alt={ iten.title } />
+            <h2>{ `R$${ iten.price }` }</h2>
+            <button onClick={ () => { getProducts(iten) } }>Comprar</button>
+          </div>
+        ))
+        }
+
+      </div>
     </div>
   );
 };
