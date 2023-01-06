@@ -1,0 +1,28 @@
+.category-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 50px;
+  top: -14px;
+  width: 800px;
+  height: 400px;
+  z-index: 10;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 0px;
+}
+
+.category-menu p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.category-menu p:hover {
+  background-color: rgb(236, 207, 143);
+}

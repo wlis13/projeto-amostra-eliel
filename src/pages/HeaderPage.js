@@ -4,15 +4,23 @@ import '../style/HeaderPage.css';
 import logoSite from '../images/jogo-header.png';
 import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
-import { getProduct, getProductById } from '../util/api';
+import { getCategories, getProduct, getProductById } from '../util/api';
 import carrinho from '../images/carrinho.png';
 import menu from '../images/menu-branco.png';
 import ShowItens from './showIitens';
+// import MyContext from '../context/MyContext';
 
 const HeaderPage = () => {
+  // const { getTarget } = useContext(MyContext);
+
   const [inputValue, setInputValue] = useState({ search: '' });
   const [result, setResult] = useState([]);
   const [showProducts, setShowProducs] = useState([]);
+
+  // if (getTarget) {
+  //   const productById = await getProductById(getTarget);
+  //   setResult(productById.results);
+  // }
 
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
@@ -30,12 +38,18 @@ const HeaderPage = () => {
     setShowProducs(get.results);
   };
 
+  const testando = async () => {
+    const a = await getCategories();
+    console.log(a);
+  }
+
   useEffect(() => {
     productsShow();
   }, [])
 
   return (
     <div className="container-Header-page">
+      <button onClick={ testando } type="button">testa</button>
       <header className="header-first-page">
         <img className="logo-header" src={ logoSite } alt="logo do site" />
         <label>
@@ -71,14 +85,17 @@ const HeaderPage = () => {
         </div>
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
-      {
-        inputValue.search ? <div className="card-page">
-          <CardsPage searchValue={ result } />
-        </div> :
-          <div className="card-page">
-            <ShowItens showValues={ showProducts } />
-          </div>
-      }
+      <div>
+        {
+          inputValue.search ? <div className="card-page">
+            <CardsPage searchValue={ result } />
+          </div> :
+            <div className="card-page">
+              <ShowItens showValues={ showProducts } />
+            </div>
+        }
+      </div>
+
     </div >
   );
 };

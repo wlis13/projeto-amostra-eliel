@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import '../style/cards.css';
 import MyContext from '../context/MyContext';
 import Categories from './Categories';
@@ -6,27 +6,24 @@ import Categories from './Categories';
 const ShowItens = (props) => {
   const showProducts = props.showValues;
 
-  const { getProduct, fetchCategories } = useContext(MyContext);
-
-  useEffect(() => {
-    fetchCategories();
-  }, [fetchCategories]);
+  const { getProducts } = useContext(MyContext);
 
   return (
     <div>
       <Categories />
       <div className="container-cards">
-        { showProducts.map((iten) => (
-          <div className="cards">
+        { showProducts.map((iten, index) => (
+          <div className="cards" key={ index }>
             <p>{ iten.title }</p>
             <img src={ iten.thumbnail } alt={ iten.title } />
             <h2>{ `R$${ iten.price }` }</h2>
-            <button onClick={ () => { getProduct(iten) } }>Comprar</button>
+            <button onClick={ () => { getProducts(iten) } }>Comprar</button>
           </div>
-        )) }
+        ))
+        }
       </div>
     </div>
   );
 };
 
-export default ShowItens
+export default ShowItens;

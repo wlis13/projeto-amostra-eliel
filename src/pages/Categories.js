@@ -1,16 +1,20 @@
 import React, { useContext } from 'react';
 import MyContext from '../context/MyContext';
+import '../style/category.css';
+import valuesCategory from '../util/category.json';
 
 const Categories = () => {
-  const { categories } = useContext(MyContext);
-  console.log(categories);
+
+  const { getValue } = useContext(MyContext);
+
   return (
-    <div>
-      {/* { categories && categories.map((iten, index) => (
+    <div className="category-menu">
+      { valuesCategory && valuesCategory.map((iten, index) => (
         <div key={ index }>
-          <p>{ iten.name }</p>
+          <p onClick={ (event) => { getValue(event) } }>{ iten.name }</p>
         </div>
-      )) } */}
+      )) }
+
     </div>
   );
 };
