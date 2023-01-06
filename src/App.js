@@ -12,6 +12,7 @@ import Cadastro from './pages/Cadastro';
 import Cozinha from './pages/Cozinha';
 import Banheiro from './pages/Banheiro';
 import Tintas from './pages/Tintas';
+import Categories from './pages/Categories';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/cadastro" component={ Cadastro } />
           <Route exact path="/cart-user" component={ CartUser } />
           <Route exact path="/show-itens" component={ ShowItens } />
+          <Route exact path="/categorias" component={ Categories } />
           <Route exact path="/pisos" component={ Pisos } />
           <Route exact path="/cozinha" component={ Cozinha } />
           <Route exact path="/banheiro" component={ Banheiro } />

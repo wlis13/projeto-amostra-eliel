@@ -7,6 +7,7 @@ const CardsPage = (props) => {
   const { getProduct } = useContext(MyContext);
 
   return (
+
     <div className="container-cards">
       { valueSearch && valueSearch.map((iten) => (
         <div className="cards" key={ iten.title }>
@@ -17,6 +18,7 @@ const CardsPage = (props) => {
         </div>
       )) }
     </div>
+
   );
 };
 

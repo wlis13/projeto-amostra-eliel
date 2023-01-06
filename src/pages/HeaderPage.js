@@ -12,7 +12,7 @@ import ShowItens from './showIitens';
 const HeaderPage = () => {
   const [inputValue, setInputValue] = useState({ search: '' });
   const [result, setResult] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [showProducts, setShowProducs] = useState([]);
 
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
@@ -27,7 +27,7 @@ const HeaderPage = () => {
 
   const productsShow = async () => {
     const get = await getProduct();
-    setCategories(get.results);
+    setShowProducs(get.results);
   };
 
   useEffect(() => {
@@ -76,7 +76,7 @@ const HeaderPage = () => {
           <CardsPage searchValue={ result } />
         </div> :
           <div className="card-page">
-            <ShowItens showValues={ categories } />
+            <ShowItens showValues={ showProducts } />
           </div>
       }
     </div >
