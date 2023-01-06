@@ -22,7 +22,7 @@ const HeaderPage = () => {
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
     setResult(productById.results);
-  }
+  };
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
@@ -55,7 +55,6 @@ const HeaderPage = () => {
       </div>);
     }
   };
-
 
   return (
     <div className="container-Header-page">

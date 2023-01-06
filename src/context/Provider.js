@@ -31,6 +31,8 @@ const Provider = ({ children }) => {
   const [click, setClick] = useState(false);
   const theClick = () => {
     setClick(true);
+    const options = document.querySelector('.category-menu');
+    options.classList.remove('menu-display');
   };
 
   const [showProducts, setShowProducs] = useState([]);
