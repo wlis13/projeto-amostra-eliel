@@ -4,7 +4,7 @@ import '../style/cards.css'
 
 const CardsPage = (props) => {
   const valueSearch = props.searchValue
-  const { getProduct } = useContext(MyContext);
+  const { getProducts } = useContext(MyContext);
 
   return (
 
@@ -14,7 +14,7 @@ const CardsPage = (props) => {
           <p>{ iten.title }</p>
           <img src={ iten.thumbnail } alt={ iten.title } />
           <h2>{ `R$${ iten.price }` }</h2>
-          <button onClick={ () => { getProduct(iten) } }>Comprar</button>
+          <button onClick={ () => { getProducts(iten) } }>Comprar</button>
         </div>
       )) }
     </div>
