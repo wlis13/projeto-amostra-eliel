@@ -26,7 +26,6 @@ const Provider = ({ children }) => {
   const removeProductsCart = (key) => {
     const remove = productsCart.filter((item, index) => index !== key);
     setProductsCart(remove);
-
   };
 
   const [click, setClick] = useState(false);
