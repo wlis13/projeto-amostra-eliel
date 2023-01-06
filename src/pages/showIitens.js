@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import '../style/cards.css';
 import MyContext from '../context/MyContext';
-import Categories from './Categories';
 
 const ShowItens = (props) => {
   const showProducts = props.showValues;
@@ -10,7 +9,6 @@ const ShowItens = (props) => {
 
   return (
     <div>
-      <Categories />
       <div className="container-cards">
         { showProducts.map((iten, index) => (
           <div className="cards" key={ index }>

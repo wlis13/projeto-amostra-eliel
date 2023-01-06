@@ -1,20 +1,34 @@
-import React, { useContext } from 'react';
-import MyContext from '../context/MyContext';
+import React, { useState } from 'react';
 import '../style/category.css';
+import { getProductById } from '../util/api';
 import valuesCategory from '../util/category.json';
 
 const Categories = () => {
 
-  const { getValue } = useContext(MyContext);
+  const [result, setResult] = useState([]);
+
+  const getValue = async ({ target }) => {
+    const productById = await getProductById(target.innerText);
+    setResult(productById.results);
+  };
+
+  const displayFix = () => {
+    const options = document.querySelector('.category-menu');
+    options.classList.add('menu-display');
+  };
+
+  const displayOut = () => {
+    const options = document.querySelector('.category-menu');
+    options.classList.remove('menu-display');
+  }
 
   return (
-    <div className="category-menu">
+    <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
       { valuesCategory && valuesCategory.map((iten, index) => (
         <div key={ index }>
-          <p onClick={ (event) => { getValue(event) } }>{ iten.name }</p>
+          <p onClick={ getValue }>{ iten.name }</p>
         </div>
       )) }
-
     </div>
   );
 };

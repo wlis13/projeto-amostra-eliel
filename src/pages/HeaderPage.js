@@ -4,23 +4,17 @@ import '../style/HeaderPage.css';
 import logoSite from '../images/jogo-header.png';
 import logoSearch from '../images/magnifying-glass.png';
 import CardsPage from './CardsPage';
-import { getCategories, getProduct, getProductById } from '../util/api';
+import { getProduct, getProductById } from '../util/api';
 import carrinho from '../images/carrinho.png';
 import menu from '../images/menu-branco.png';
 import ShowItens from './showIitens';
-// import MyContext from '../context/MyContext';
+import Categories from './Categories';
 
 const HeaderPage = () => {
-  // const { getTarget } = useContext(MyContext);
 
   const [inputValue, setInputValue] = useState({ search: '' });
   const [result, setResult] = useState([]);
   const [showProducts, setShowProducs] = useState([]);
-
-  // if (getTarget) {
-  //   const productById = await getProductById(getTarget);
-  //   setResult(productById.results);
-  // }
 
   const productsById = async () => {
     const productById = await getProductById(inputValue.search);
@@ -38,18 +32,32 @@ const HeaderPage = () => {
     setShowProducs(get.results);
   };
 
-  const testando = async () => {
-    const a = await getCategories();
-    console.log(a);
-  }
-
   useEffect(() => {
     productsShow();
   }, [])
 
+  const testfuncao = () =>
+  (
+    inputValue.search ? <div className="card-page">
+      <CardsPage searchValue={ result } />
+    </div> :
+      <div className="card-page">
+        <ShowItens showValues={ showProducts } />
+      </div>
+  );
+
+  const displayMenu = () => {
+    const options = document.querySelector('.category-menu');
+    options.classList.add('menu-display');
+  };
+
+  const endDisplayMenu = () => {
+    const options = document.querySelector('.category-menu');
+    options.classList.remove('menu-display');
+  }
+
   return (
     <div className="container-Header-page">
-      <button onClick={ testando } type="button">testa</button>
       <header className="header-first-page">
         <img className="logo-header" src={ logoSite } alt="logo do site" />
         <label>
@@ -66,7 +74,13 @@ const HeaderPage = () => {
           />
         </label>
         <div className="links-header">
-          <img className="logo-menu" src={ menu } alt="logo menu" />
+          <img
+            onMouseOver={ displayMenu }
+            onMouseOut={ endDisplayMenu }
+            className="logo-menu"
+            src={ menu }
+            alt="logo menu"
+          />
 
           <Link className="next-page" to="/tintas">Tintas</Link>
           <Link className="next-page" to="/pisos">Pisos</Link>
@@ -86,18 +100,12 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       <div>
-        {
-          inputValue.search ? <div className="card-page">
-            <CardsPage searchValue={ result } />
-          </div> :
-            <div className="card-page">
-              <ShowItens showValues={ showProducts } />
-            </div>
-        }
+        <Categories />
+        { testfuncao() }
       </div>
 
     </div >
   );
 };
 
-export default HeaderPage
+export default HeaderPage;

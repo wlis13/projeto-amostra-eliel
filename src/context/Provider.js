@@ -40,19 +40,11 @@ const Provider = ({ children }) => {
     fetchTest();
   }, [fetchTest]);
 
-
-  const [getTarget, setGetTarget] = useState('');
-  const getValue = ({ target }) => {
-    setGetTarget(target.innerText);
-  };
-
   const contextValues = {
     getProducts,
     removeProductsCart,
-    getValue,
     productsCart,
     valueCategory,
-    getTarget,
   };
 
   return (
