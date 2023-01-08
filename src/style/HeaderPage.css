@@ -83,22 +83,13 @@
 
 @media only screen and (width: 412px) {
   .container-Header-page {
+    position: absolute;
+    right: 50px;
     width: 412px;
   }
 
   .header-first-page {
-  }
-}
-
-@media only screen and (width: 360px) {
-  .container-Header-page {
-    position: absolute;
-    right: 50px;
-    width: 360px;
-  }
-
-  .header-first-page {
-    width: 360px;
+    width: 412px;
     margin-left: 50px;
     background-size: cover;
   }
@@ -107,7 +98,6 @@
     position: absolute;
     width: 90%;
     left: 60px;
-    border: 2px solid red;
   }
 
   .logo-header {
@@ -138,8 +128,103 @@
   }
 }
 
+@media only screen and (width: 360px) {
+  .container-Header-page {
+    position: relative;
+    width: 360px;
+    border: 2px solid red;
+  }
+  .container-Header-page {
+    position: absolute;
+    left: -53px;
+    width: 360px;
+  }
+
+  .header-first-page {
+    position: absolute;
+    left: 50px;
+    width: 360px;
+
+    background-size: cover;
+  }
+
+  .header-first-page input {
+    position: absolute;
+    width: 90%;
+    left: 10px;
+  }
+
+  .logo-header {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 20px;
+    left: 50px;
+  }
+
+  .next-login {
+    position: absolute;
+    top: 40px;
+    right: 5px;
+  }
+
+  .logo-search {
+    top: 140px;
+    left: 320px;
+  }
+
+  .links-header {
+    width: 350px;
+  }
+
+  .next-page {
+    margin: 0px;
+  }
+}
+
 @media only screen and (width: 384px) {
   .container-Header-page {
+    position: absolute;
+    right: 50px;
     width: 384px;
+  }
+
+  .header-first-page {
+    width: 384px;
+    margin-left: 50px;
+    background-size: cover;
+  }
+
+  .header-first-page input {
+    position: absolute;
+    width: 90%;
+    left: 60px;
+  }
+
+  .logo-header {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 20px;
+    left: 50px;
+  }
+
+  .next-login {
+    position: absolute;
+    top: 40px;
+    right: -30px;
+  }
+
+  .logo-search {
+    top: 140px;
+    left: 350px;
+  }
+
+  .links-header {
+    width: 350px;
+  }
+
+  .next-page {
+    margin: 0px;
   }
 }
