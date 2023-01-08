@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MyContext from '../context/MyContext';
 import '../style/cards.css';
 import '../style/Cart.css';
+import backPage from '../images/back-page.png';
 
 const CartUser = () => {
 
@@ -28,8 +29,8 @@ const CartUser = () => {
   }, [getPrice])
 
   return (
-    <div>
-      <Link exact to="/">Voltar</Link>
+    <div className="container-cart">
+      <Link exact to="/"><img className="back-page" src={ backPage } alt="seta de voltar" /></Link>
       <h1>Seu Carrinho de Compras</h1>
       <div className="container-cards">
         { productsCart && productsCart.map((iten, index) => (
@@ -43,7 +44,7 @@ const CartUser = () => {
         )) }
       </div>
       <div>
-        { <h1>{ `Valor da compra: R$${ Price.toFixed(2) }` }</h1> }
+        { <h3>{ `Valor da compra: R$${ Price.toFixed(2) }` }</h3> }
       </div>
       <button type="submit">Confirmar Compra</button>
     </div>

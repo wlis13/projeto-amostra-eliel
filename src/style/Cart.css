@@ -1,9 +1,86 @@
+.back-page {
+  width: 40px;
+  margin: 10px;
+}
+
 @media only screen and (width: 360px) {
+  .container-cart {
+    width: 360px;
+    height: 100%;
+  }
+
+  .container-cart h1 {
+    text-align: center;
+    width: 360px;
+  }
+
+  .container-cart h3 {
+    margin-top: 30px;
+  }
+
   .container-cards {
     position: relative;
     top: 30px;
     left: -20px;
     width: 360px;
-    border: 2px solid red;
+  }
+
+  .back-page {
+    width: 40px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (width: 384px) {
+  .container-cart {
+    width: 384px;
+  }
+
+  .container-cart h1 {
+    text-align: center;
+    width: 384px;
+  }
+
+  .container-cart h3 {
+    margin-top: 10px;
+  }
+
+  .container-cards {
+    position: relative;
+    top: 30px;
+    left: -20px;
+    width: 384px;
+  }
+
+  .back-page {
+    width: 40px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (width: 412px) {
+  .container-cart {
+    width: 412px;
+  }
+
+  .container-cart h1 {
+    text-align: center;
+    width: 412px;
+  }
+
+  .container-cart h3 {
+    margin-top: 10px;
+  }
+
+  .container-cards {
+    position: relative;
+    top: 30px;
+    left: -20px;
+    width: 412px;
+  }
+
+  .back-page {
+    width: 40px;
+    margin: 10px;
   }
 }
