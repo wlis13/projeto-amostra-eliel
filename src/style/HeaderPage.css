@@ -85,11 +85,56 @@
   .container-Header-page {
     width: 412px;
   }
+
+  .header-first-page {
+  }
 }
 
 @media only screen and (width: 360px) {
   .container-Header-page {
+    position: absolute;
+    right: 50px;
     width: 360px;
+  }
+
+  .header-first-page {
+    width: 360px;
+    margin-left: 50px;
+    background-size: cover;
+  }
+
+  .header-first-page input {
+    position: absolute;
+    width: 90%;
+    left: 60px;
+    border: 2px solid red;
+  }
+
+  .logo-header {
+    position: absolute;
+    width: 150px;
+    height: 100px;
+    top: 20px;
+    left: 50px;
+  }
+
+  .next-login {
+    position: absolute;
+    top: 40px;
+    right: -30px;
+  }
+
+  .logo-search {
+    top: 140px;
+    left: 350px;
+  }
+
+  .links-header {
+    width: 350px;
+  }
+
+  .next-page {
+    margin: 0px;
   }
 }
 
