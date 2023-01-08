@@ -13,6 +13,7 @@
   width: 40%;
   margin-top: 50px;
   margin-left: 10px;
+  margin-bottom: 50px;
 }
 
 .total {
@@ -24,6 +25,11 @@
 
 .form {
   text-decoration: none;
+}
+
+.back-page {
+  margin-top: 10px;
+  animation: leftRight 1s infinite, widthLogo 1s infinite;
 }
 
 @media only screen and (width: 360px) {
