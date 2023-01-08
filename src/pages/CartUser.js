@@ -26,12 +26,12 @@ const CartUser = () => {
 
   useEffect(() => {
     getPrice();
-  }, [getPrice])
+  }, [getPrice]);
 
   return (
     <div className="container-cart">
       <Link exact to="/"><img className="back-page" src={ backPage } alt="seta de voltar" /></Link>
-      <h1>Seu Carrinho de Compras</h1>
+      <h1 className="title-cart">Seu Carrinho de Compras</h1>
       <div className="container-cards">
         { productsCart && productsCart.map((iten, index) => (
           iten.title !== '' &&
@@ -43,10 +43,11 @@ const CartUser = () => {
           </div>
         )) }
       </div>
-      <div>
-        { <h3>{ `Valor da compra: R$${ Price.toFixed(2) }` }</h3> }
+      <div className="amount">
+        <h3>{ `Subtotal: R$${ Price.toFixed(2) }` }</h3>
+        <h3 className="total">{ `Valor da compra: R$${ Price.toFixed(2) }` }</h3>
+        <Link className="form" to="/formulario">Finalizar Compra</Link>
       </div>
-      <button type="submit">Confirmar Compra</button>
     </div>
   );
 };

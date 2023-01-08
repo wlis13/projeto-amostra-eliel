@@ -3,6 +3,29 @@
   margin: 10px;
 }
 
+.amount {
+  top: 50px;
+  right: 150px;
+  border: 1px solid rgb(8, 8, 8, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+  height: 150px;
+  width: 40%;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.total {
+  background-color: rgb(168, 167, 167);
+  padding: 10px;
+
+  border-radius: 5px;
+}
+
+.form {
+  text-decoration: none;
+}
+
 @media only screen and (width: 360px) {
   .container-cart {
     width: 360px;
@@ -10,10 +33,18 @@
   }
 
   .container-cart h1 {
+    display: flex;
     text-align: center;
-    width: 360px;
+    width: 300px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(247, 171, 85, 0.7);
   }
 
+  .title-cart p {
+    font-size: 10pt;
+  }
   .container-cart h3 {
     margin-top: 30px;
   }
@@ -21,13 +52,25 @@
   .container-cards {
     position: relative;
     top: 30px;
-    left: -20px;
-    width: 360px;
+    left: 30px;
+    width: 355px;
   }
 
   .back-page {
     margin-top: 10px;
     animation: leftRight 1s infinite, widthLogo 1s infinite;
+  }
+
+  .amount {
+    width: 70%;
+  }
+
+  .form {
+    background-color: rgb(65, 116, 55);
+    color: white;
+    font-size: 15pt;
+    padding: 5px;
+    margin-top: 20px;
   }
 }
 
@@ -52,6 +95,15 @@
   }
 }
 
+@keyframes aparecer {
+  from {
+    font-size: 0pt;
+  }
+  to {
+    font-size: 21pt;
+  }
+}
+
 @media only screen and (width: 384px) {
   .container-cart {
     width: 384px;
@@ -69,13 +121,25 @@
   .container-cards {
     position: relative;
     top: 30px;
-    left: -20px;
+    left: 40px;
     width: 384px;
   }
 
   .back-page {
     margin: 10px;
     animation: leftRight 1s infinite, widthLogo 1s infinite;
+  }
+
+  .amount {
+    width: 70%;
+  }
+
+  .form {
+    background-color: rgb(65, 116, 55);
+    color: white;
+    font-size: 15pt;
+    padding: 5px;
+    margin-top: 20px;
   }
 }
 
@@ -96,12 +160,24 @@
   .container-cards {
     position: relative;
     top: 30px;
-    left: -20px;
+    left: 50px;
     width: 412px;
   }
 
   .back-page {
     margin: 10px;
     animation: leftRight 1s infinite, widthLogo 1s infinite;
+  }
+
+  .amount {
+    width: 70%;
+  }
+
+  .form {
+    background-color: rgb(65, 116, 55);
+    color: white;
+    font-size: 15pt;
+    padding: 5px;
+    margin-top: 20px;
   }
 }
