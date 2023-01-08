@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import MyContext from '../context/MyContext';
-import '../style/category.css';
 
 const Categories = () => {
 

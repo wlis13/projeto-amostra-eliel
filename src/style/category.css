@@ -42,3 +42,41 @@
 .category-menu p:hover {
   background-color: rgb(236, 207, 143);
 }
+
+@media only screen and (width: 360px) {
+  .menu-display {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 50px;
+    top: 250px;
+    width: 355px;
+    height: 900px;
+    z-index: 10;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 2px 2px 4px black;
+    background-color: rgb(14, 13, 13, 0.8);
+    animation: opacidade 1s;
+  }
+
+  .category-menu p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: rgb(248, 211, 163);
+    font-size: 15pt;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+    border-bottom: 1px solid black;
+    margin: 2px;
+    height: 45px;
+    width: 165px;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+}
