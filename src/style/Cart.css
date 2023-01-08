@@ -26,8 +26,29 @@
   }
 
   .back-page {
-    width: 40px;
-    margin: 10px;
+    margin-top: 10px;
+    animation: leftRight 1s infinite, widthLogo 1s infinite;
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    margin-left: 10px;
+  }
+  50% {
+    margin-left: 30px;
+  }
+  100% {
+    margin-left: 10px;
+  }
+}
+
+@keyframes widthLogo {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
   }
 }
 
@@ -53,8 +74,8 @@
   }
 
   .back-page {
-    width: 40px;
     margin: 10px;
+    animation: leftRight 1s infinite, widthLogo 1s infinite;
   }
 }
 
@@ -80,7 +101,7 @@
   }
 
   .back-page {
-    width: 40px;
     margin: 10px;
+    animation: leftRight 1s infinite, widthLogo 1s infinite;
   }
 }
