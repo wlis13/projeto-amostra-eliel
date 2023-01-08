@@ -1,0 +1,9 @@
+@media only screen and (width: 360px) {
+  .container-cards {
+    position: relative;
+    top: 30px;
+    left: -20px;
+    width: 360px;
+    border: 2px solid red;
+  }
+}

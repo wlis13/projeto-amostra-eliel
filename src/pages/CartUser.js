@@ -1,7 +1,8 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MyContext from '../context/MyContext';
-import '../style/cards.css'
+import '../style/cards.css';
+import '../style/Cart.css';
 
 const CartUser = () => {
 
