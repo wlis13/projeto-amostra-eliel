@@ -13,6 +13,7 @@ import Cozinha from './pages/Cozinha';
 import Banheiro from './pages/Banheiro';
 import Tintas from './pages/Tintas';
 import Categories from './pages/Categories';
+import CarouselPage from './pages/CarouselPage';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/cart-user" component={ CartUser } />
           <Route exact path="/show-itens" component={ ShowItens } />
           <Route exact path="/categories" component={ Categories } />
+          <Route exact path="/carrocel" component={ CarouselPage } />
           <Route exact path="/pisos" component={ Pisos } />
           <Route exact path="/cozinha" component={ Cozinha } />
           <Route exact path="/banheiro" component={ Banheiro } />

@@ -12,7 +12,8 @@ import ShowItens from './showIitens';
 import Categories from './Categories';
 import MyContext from '../context/MyContext';
 import valuesCategory from '../util/category.json';
-import Carousel from './Carousel';
+import CarouselPage from './CarouselPage';
+import ErrorBoundary from './Error';
 
 const HeaderPage = () => {
 
@@ -102,7 +103,9 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       <div>
-        <Carousel />
+        { <ErrorBoundary>
+          <CarouselPage />
+        </ErrorBoundary> }
       </div>
       <div>
         <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
