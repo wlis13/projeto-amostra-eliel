@@ -12,6 +12,7 @@ import ShowItens from './showIitens';
 import Categories from './Categories';
 import MyContext from '../context/MyContext';
 import valuesCategory from '../util/category.json';
+import Carousel from './Carousel';
 
 const HeaderPage = () => {
 
@@ -100,6 +101,9 @@ const HeaderPage = () => {
         </div>
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
+      <div>
+        <Carousel />
+      </div>
       <div>
         <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
           { valuesCategory && valuesCategory.map((iten, index) => (

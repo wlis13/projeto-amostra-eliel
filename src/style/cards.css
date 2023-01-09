@@ -1,7 +1,9 @@
 .container-cards {
   display: flex;
   flex-wrap: wrap;
+  position: absolute;
   margin: 20px;
+  top: 330px;
 }
 
 .container-cart h1 {
