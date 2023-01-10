@@ -14,6 +14,10 @@ import MyContext from '../context/MyContext';
 import valuesCategory from '../util/category.json';
 import Slider from './Slider';
 import { SwiperSlide } from 'swiper/react';
+import primeiraImagen from '../images/primeira-imagen.png';
+import segundaImagen from '../images/segunda-imagen.png';
+import terceiraImagen from '../images/terceira-imagen.png';
+import quartaImagen from '../images/quarta-imagen.png';
 
 const HeaderPage = () => {
   const settings: SliderProps = {
@@ -114,16 +118,16 @@ const HeaderPage = () => {
         {
           <Slider settings={ settings }>
             <SwiperSlide>
-              <h1>Test 1</h1>
+              <img className="slider" src={ primeiraImagen } alt="imagen slider" />
             </SwiperSlide>
             <SwiperSlide>
-              <h1>Test 2</h1>
+              <img className="slider" src={ segundaImagen } alt="imagen slider" />
             </SwiperSlide>
             <SwiperSlide>
-              <h1>Test 3</h1>
+              <img className="slider" src={ terceiraImagen } alt="imagen slider" />
             </SwiperSlide>
             <SwiperSlide>
-              <h1>Test 4</h1>
+              <img className="slider" src={ quartaImagen } alt="imagen slider" />
             </SwiperSlide>
           </Slider>
         }

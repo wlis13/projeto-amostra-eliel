@@ -181,6 +181,11 @@
   }
 }
 
+.slider {
+  background-size: cover;
+  width: 100%;
+}
+
 @media only screen and (width: 384px) {
   .container-Header-page {
     position: absolute;
