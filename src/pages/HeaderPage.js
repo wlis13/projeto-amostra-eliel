@@ -12,10 +12,18 @@ import ShowItens from './showIitens';
 import Categories from './Categories';
 import MyContext from '../context/MyContext';
 import valuesCategory from '../util/category.json';
-import CarouselPage from './CarouselPage';
-import ErrorBoundary from './Error';
+import Slider from './Slider';
+import { SwiperSlide } from 'swiper/react';
 
 const HeaderPage = () => {
+  const settings: SliderProps = {
+    spaceBetweein: 50,
+    slidesPerView: 1,
+    navigation: true,
+    pagination: {
+      clickbable: true,
+    }
+  }
 
   const { click, setClick, theClick, getValue } = useContext(MyContext);
 
@@ -103,9 +111,22 @@ const HeaderPage = () => {
         <Link className="next-login" to="/Login">Entrar</Link>
       </header>
       <div>
-        { <ErrorBoundary>
-          <CarouselPage />
-        </ErrorBoundary> }
+        {
+          <Slider settings={ settings }>
+            <SwiperSlide>
+              <h1>Test 1</h1>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h1>Test 2</h1>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h1>Test 3</h1>
+            </SwiperSlide>
+            <SwiperSlide>
+              <h1>Test 4</h1>
+            </SwiperSlide>
+          </Slider>
+        }
       </div>
       <div>
         <div onMouseOut={ displayOut } onMouseOver={ displayFix } className="category-menu">
