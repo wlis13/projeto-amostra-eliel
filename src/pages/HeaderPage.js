@@ -21,7 +21,6 @@ import quartaImagen from '../images/quarta-imagen.png';
 
 const HeaderPage = () => {
   const settings: SliderProps = {
-    spaceBetweein: 50,
     slidesPerView: 1,
     navigation: true,
     pagination: {
@@ -117,16 +116,16 @@ const HeaderPage = () => {
       <div>
         {
           <Slider settings={ settings }>
-            <SwiperSlide>
+            <SwiperSlide className="childe-slide">
               <img className="slider" src={ primeiraImagen } alt="imagen slider" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="childe-slide">
               <img className="slider" src={ segundaImagen } alt="imagen slider" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="childe-slide">
               <img className="slider" src={ terceiraImagen } alt="imagen slider" />
             </SwiperSlide>
-            <SwiperSlide>
+            <SwiperSlide className="childe-slide">
               <img className="slider" src={ quartaImagen } alt="imagen slider" />
             </SwiperSlide>
           </Slider>
