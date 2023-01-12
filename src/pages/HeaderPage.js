@@ -72,6 +72,7 @@ const HeaderPage = () => {
 
   return (
     <div className="container-Header-page">
+      <Link to="/test-api">test</Link>
       <header className="header-first-page">
         <img className="logo-header" src={ logoSite } alt="logo do site" />
         <label>
@@ -125,7 +126,7 @@ const HeaderPage = () => {
             <SwiperSlide className="childe-slide">
               <img className="slider" src={ terceiraImagen } alt="imagen slider" />
             </SwiperSlide>
-            <SwiperSlide className="childe-slide">
+            <SwiperSlide>
               <img className="slider" src={ quartaImagen } alt="imagen slider" />
             </SwiperSlide>
           </Slider>

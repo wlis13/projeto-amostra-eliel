@@ -12,6 +12,7 @@ import Cozinha from './pages/Cozinha';
 import Banheiro from './pages/Banheiro';
 import Tintas from './pages/Tintas';
 import Categories from './pages/Categories';
+import TestApi from './pages/TestAPI';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/cozinha" component={ Cozinha } />
           <Route exact path="/banheiro" component={ Banheiro } />
           <Route exact path="/tintas" component={ Tintas } />
+          <Route exact path="/test-api" component={ TestApi } />
         </Switch>
       </BrowserRouter>
     </Provider>
